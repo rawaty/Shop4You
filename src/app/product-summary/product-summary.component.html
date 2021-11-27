@@ -1,0 +1,60 @@
+
+<section class="container">
+    <div class="text-start">
+        <h1 class="display-8">Summary</h1>
+        <hr class="w-auto"/>
+        <div *ngIf="false">
+            <div class="row" *ngFor="let item of products">
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    <img src="{{item.image}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    <h4 class="prod_name">{{item.title | shortenPipe}}</h4>
+                    <p class="card-text"><small class="text-muted">${{item.price}}</small></p>
+                               
+                </div>
+            </div>
+            <hr class="w-auto"/>
+        </div>
+        
+ 
+
+        <input class="form-control w-30" type="text" placeholder="Enter Coupon Code" (input)="onUpdateTotalAfterCoupon($event)">
+        <hr class="w-30"/>
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    <p>SUBTOTAL</p>
+                </div>
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    ${{grandTotal}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    <p>Shipping</p>
+                </div>
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    free
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    <p>Taxes</p>
+                </div>
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    ${{tax}}
+                </div>
+            </div>
+            <hr class="w-auto"/>
+            <div class="row">
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    <p>Total</p>
+                </div>
+                <div class="col-lg-6 col-md-3 col-sm-3 col-6">
+                    ${{total}}
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>

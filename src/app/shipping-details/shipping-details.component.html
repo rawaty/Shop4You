@@ -1,0 +1,103 @@
+<section class="container my-5">
+    <div class="row text-start ">
+        <div class="col-lg-8">
+            <h1 class="display-8">Shipping Details</h1>
+            <hr class="w-auto"/>
+            <form [formGroup]="shippingForm" (ngSubmit)="SaveEmployee(shippingForm.value)">
+
+                <div class="row row-cols-2">
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="userFirstName" placeholder="First Name">
+                        <span class="form-text text-danger" *ngIf="!shippingForm.get('userFirstName').valid
+                        && shippingForm.get('userFirstName').touched">please enter name</span>
+                    </div>
+
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="userLastName" placeholder="Last Name">
+                        <span class="form-text text-danger" *ngIf="!shippingForm.get('userLastName').valid
+                        && shippingForm.get('userLastName').touched">please enter Lastname</span>
+                    </div>
+
+                    <div class="col-lg-12 py-3 col-sm-12 col-12 py-3">
+                        <input type="text" class="form-control" formControlName="userAddress1" placeholder="Address">
+                        <span class="form-text text-danger" *ngIf="!shippingForm.get('userAddress1').valid
+                        && shippingForm.get('userAddress1').touched">please enter Address</span>
+                    </div>
+                    <div class="col-lg-12 py-3 col-sm-12 col-12 py-3">
+                        <input type="text" class="form-control" placeholder="Address 2">
+                    </div>
+                    <div class="col py-3">
+                        <select class="form-select" aria-label="Default select example" formControlName="userCountry">
+                            <option *ngFor="let country of country">{{country}}</option>
+                          
+                          </select>
+                    </div>
+                    <div class="col py-3">
+                        <input type="text" class="form-control" placeholder="City" formControlName="userCity">
+                        <span class="form-text text-danger" *ngIf="!shippingForm.get('userCity').valid
+                        && shippingForm.get('userCity').touched">please enter City</span>
+                    </div>
+
+                    <div class="col py-3">
+                        <input type="text" class="form-control" placeholder="Zip/Postal Code" formControlName="userPostalCode">
+                        <span class="form-text text-danger" *ngIf="!shippingForm.get('userPostalCode').valid
+                        && shippingForm.get('userPostalCode').touched">please enter postal code max 7</span>
+
+                    </div>
+                    <div class="col py-3">
+                        <input type="text" class="form-control" placeholder="Phone Number" formControlName="userPhoneNumber">
+                        <span class="form-text text-danger" *ngIf="!shippingForm.get('userPhoneNumber').valid
+                        && shippingForm.get('userPhoneNumber').touched">please enter 10 digit number</span>
+                    </div>
+                    <hr class="col-12"/>
+    
+                    <div class="col">
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="deliveryOption" 
+                               value="free" formControlName="deliveryOption" id="flexRadioDefault1">
+                                <label class="form-check-label" for="free">
+                                    <h6>Free Shipping</h6>
+                                    <p class="card-text"><small class="text-muted">Between 2-5 working days</small></p>
+                                </label>
+                            </div>
+                        </div>        
+    
+                    </div>
+    
+                    <div class="col">
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" 
+                                name="deliveryOption" formControlName="deliveryOption" value="pay"
+                                 id="flexRadioDefault2" >
+                                <label class="form-check-label" for="pay">
+                                    <h6>Next Day Delivery -$20</h6>
+                                    <p class="card-text"><small class="text-muted">24 hours from checkout</small></p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <button type="submit">Submit</button> -->
+           
+           
+            <hr class="col-12"/>
+            <div class="mb-5">
+                <button class="btn btn-outline-primary mx-2"
+                [disabled]="shippingForm.invalid" type="submit">Save</button>
+                <button class="btn btn-outline-primary mx-2" routerLink="/cart/paymentoptions" 
+                [disabled]="shippingForm.invalid" type="button">Next</button>
+                
+                <button class="btn btn-outline-primary mx-2" type="button"
+                 routerLink="/cart/shoppingcart">Back</button>
+            </div>
+           
+        </form>
+        </div>
+        <div class="col-lg-4 ">
+            
+            <app-product-summary></app-product-summary>
+        </div>
+    </div>
+</section>

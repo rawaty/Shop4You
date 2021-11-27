@@ -1,0 +1,118 @@
+<section class="container my-5">
+    <div class="row text-start ">
+        
+            <h1 class="display-8">Payment Method</h1>
+            <hr class="w-30"/>
+    </div>
+</section>
+
+ <!-- payment Optons -->
+
+ 
+ <form [formGroup]="paymentForm" (ngSubmit)="SavePaymentOption(paymentForm.value)">
+ <section class="container ">
+     <div class="pyment1 py-3 px-3">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentOption"
+                     id="flexRadioDefault2" value="creditcard" formControlName="paymentOption" checked>
+                    <label class="form-check-label" for="creditcard">
+                        <h6>Credit Card</h6>
+                        <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iste saepe minus qui eius numquam!</small></p>
+                    </label>
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5">
+              <input type="text" placeholder="0000  0000  0000  0000" 
+              formControlName="usercard" class="form-control" >
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4" formGroupName="userexpiry">
+              <div class="row row-cols-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="MM" formControlName="usermonth">
+                
+                </div>
+                <div class="col" style="width: 10px;">
+                  <p style="font-size: 25px;">/</p>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="text" placeholder="YY" formControlName="useryear">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3" style="width:110px" >
+              <input type="text" class="form-control" placeholder="CVV" formControlName="usercvv">
+           
+            </div>
+           
+        </div>
+        <div class="row">
+        <div class="col-lg-10">
+          <input type="text"  class="form-control" placeholder="Card Holder Name" 
+          formControlName="usercardholder">
+        </div>
+        </div>
+    
+     </div>
+     <div>
+      <span class="form-text text-danger" *ngIf="!paymentForm.get('usercard').valid
+      && paymentForm.get('usercard').touched">please enter valid card Details <br></span>
+      <span class="form-text text-danger" *ngIf="!paymentForm.get('userexpiry.usermonth').valid
+      && paymentForm.get('userexpiry.usermonth').touched">please enter Month<br></span>
+      <span class="form-text text-danger" *ngIf="!paymentForm.get('userexpiry.useryear').valid
+      && paymentForm.get('userexpiry.useryear').touched">please enter Year<br></span>
+      <span class="form-text text-danger" *ngIf="!paymentForm.get('usercvv').valid
+      && paymentForm.get('usercvv').touched">please enter correct CVV<br></span>
+      <span class="form-text text-danger" *ngIf="!paymentForm.get('usercardholder').valid
+      && paymentForm.get('usercardholder').touched">please enter card holder name<br></span>
+     </div>
+     
+
+    </section>
+
+    <!-- Payment 2 -->
+
+    <section class="container my-3">
+        <div class="pyment1 px-3 py-3">
+           <div class="row">
+               <div class="col-lg-8">
+                   <div class="form-check">
+                       <input class="form-check-input" type="radio" name="paymentOption"
+                        id="flexRadioDefault2" value="paypal" formControlName="paymentOption">
+                       <label class="form-check-label" for="paypal">
+                           <h6>Paypal</h6>
+                           <p class="card-text"><small class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iste saepe minus qui eius numquam!</small></p>
+                       </label>
+                   </div>
+               </div>
+               <div class="col-lg-4 pay_img">
+                   <img src="https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png" 
+                   alt="paypalimage" class="img-fluid">
+               </div>
+               
+           </div>
+       
+           
+       
+        </div>
+       </section>
+
+       <section class="container my-5">
+        <div class="row text-start ">
+            <div class="col-lg-12">
+               
+                <hr class="col-12"/>
+                <button class="btn btn-outline-primary mb-5"  type="submit">Save</button>
+                <button class="btn btn-outline-primary mx-2 mb-5" routerLink="/orderpage"  type="button">Pay Now</button>
+                <button class="btn btn-outline-primary mx-2 mb-5" routerLink="/cart/shippingdetails" type="button">Back</button>
+
+                </div>
+                </div>
+                </section>
+                <!-- <button type="submit">Submit</button> -->
+</form>

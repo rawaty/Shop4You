@@ -1,0 +1,52 @@
+<section class="container my-5">
+    <div class="row text-start ">
+        <div class="col-lg-8" *ngIf="products">
+            <h1 class="display-8">Shopping Cart</h1>
+            <hr class="w-auto"/>
+            <div class="row my-3" *ngFor="let item of products; let i=index">
+               
+                <div class="col-lg-3 col-md-3 ">
+                    <img src="{{item.image}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-6 col-md-6 ">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.description}}</p>
+                    <p class="card-text"><small class="text-muted">{{item.price}}</small></p>
+                </div>
+                <div class="col-lg-3 col-md-3 ">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="1 pcs" aria-label="Recipient's username with two button addons">
+                        <button class="btn btn-outline-secondary" type="button">+</button>
+                        <button class="btn btn-outline-secondary" (click)="removeItem(item)" type="button">-</button>
+                      </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-8" *ngIf="products.length===0">
+                <h1>Your cart is empty</h1>
+                <p>Add Item To it</p>
+                <button routerLink="/" class="btn btn-primary">Shop Now</button>
+            </div>
+
+           
+            <hr class="w-auto"/>
+            <div *ngIf="products.length>0" class="mb-5">
+                <a class="btn btn-outline-primary" routerLink="/cart/shippingdetails" role="button">Next</a>
+                <a class="btn btn-outline-primary mx-2" routerLink="/" (click)="emptycart()" role="button">Cancel</a>
+    
+            </div>
+                    </div>
+
+      
+
+
+        <div class="col-lg-4 ">
+            <app-product-summary></app-product-summary>
+        </div>
+       
+    </div>
+    
+    </section>
+
+    

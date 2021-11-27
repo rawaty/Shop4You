@@ -1,0 +1,17 @@
+ul li:hover{
+    background-color:burlywood;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px peru;
+  
+}
+
+ul>li>a{
+    color: wheat;
+    padding-left: 15px;
+}
+ul>li{
+    margin-top: 5px;
+}
+.btn{
+    margin-top: 5px;
+}

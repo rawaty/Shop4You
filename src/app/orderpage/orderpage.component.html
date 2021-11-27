@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+      <tr>
+       
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Country</th>
+        <th scope="col">City</th>
+        <th scope="col">Postal Code</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Mode Of Delivery</th>
+        <th scope="col">Purchase Item</th>
+        <th scope="col">Total</th>
+        <th scope="col">Payment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>{{fullName}}</td>
+        <td>{{fullAddress}}</td>
+        <td>{{userCountry}}</td>
+        <td>{{userCity}}</td>
+        <td>{{userPostalCode}}</td>
+        <td>{{userPhoneNumber}}</td>
+        <td>{{delivery}}</td>
+        <td><li *ngFor="let item of purchaseProduct let i=index" style="list-style: none;">{{i+1}}.{{item.title}}</li></td>
+        <td>{{TotalPrice}}</td>
+        <td>{{paymentOption}}</td>
+      </tr>
+     
+    </tbody>
+  </table>

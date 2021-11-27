@@ -1,0 +1,22 @@
+<section class="container bg-light pt-5 mt-2">
+    <div class="text-center">
+        <p class="display-9">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, aperiam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum tenetur similique numquam eaque, et sint. Quos fugit aliquid ipsa aperiam.
+       
+        </p>
+    </div>
+    </section>
+    <!-- search Box -->
+<div class="container">
+    <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-7">
+            <div class="search"> 
+                <i class="bi bi-search"></i>
+                 <input type="text" class="form-control" [(ngModel)]="searchTerm" 
+                 (keyup)="search($event)" placeholder="Search"> 
+                 <!-- <button class="btn btn-primary">Submit</button> </div> -->
+        </div>
+    </div>
+</div>
+
+    <app-product-listing-page></app-product-listing-page>

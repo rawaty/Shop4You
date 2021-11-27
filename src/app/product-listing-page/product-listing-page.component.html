@@ -1,0 +1,39 @@
+
+
+<!-- Product List -->
+<section class="bg-light pt-1">
+    <div class="text-center">
+        <h1 class="display-4"> Product Listing</h1>
+        <hr class="w-25 mx-auto"/>
+        <p class="display-9">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, aperiam.</p>
+    </div>
+    <div class="container product_img ">
+        <div class="row my-1 ">
+            <div class="col-md-4 col-10 col-xxl-4 mx-auto div_hover" *ngFor="let item of productDetails | filter:searchKey:'title'" >
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row ">
+                      <div class="col-md-4 con">
+                        <img src={{item.image}} class="img-fluid rounded-start" alt="services Images">
+                        <div class="middle">
+                          <button type="button" class="btn btn-primary hover_btn" 
+                          (click)="addtoCart(item)">Add To</button>
+                        </div>
+                    </div>
+                      <div class="col-md-8" [routerLink]="['/description',item.id]">
+                        <div class="card-body">
+                          <h5 class="card-title">{{item.title | shortenPipe}}</h5>
+                          <!-- <p class="card-text">This is a Product Details card with supporting text below as a natural lead-in to additional content.</p> -->
+                         
+                          <i class="bi bi-star mx-1"></i><i class="bi bi-star mx-1"></i>
+                          <i class="bi bi-star mx-1"></i><i class="bi bi-star mx-1"></i><i class="bi bi-star mx-1"></i>
+
+                          <p class="card-text"><small class="text-muted">Price: {{item.price}}</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+           
+            </div>
+            </div>
+    </section>

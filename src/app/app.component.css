@@ -1,0 +1,15 @@
+ app-footer{
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   /* text-align: center; */
+}
+
+@media (max-width: 768px) {
+    app-footer{
+        position: relative;
+        top:10vh;
+    }
+  } 
+  
